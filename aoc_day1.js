@@ -20,10 +20,15 @@ async function readFile() {
         const arrOfSumsOfElvesFood = arrOfSortedElvesFood.map((arr, index) => {
             return arr.reduce((acc, currentVal) => acc + currentVal, 0)
         })
-        console.log(Math.max(...arrOfSumsOfElvesFood))
+        console.log('First three:', arrOfSumsOfElvesFood.sort((a, b) => b - a))
+        console.log(
+            'This is sum of first three max:', arrOfSumsOfElvesFood.sort((a, b) => b - a).slice(0, 3).reduce((a, b) => a + b, 0)
+        )
+        console.log('This is max:', Math.max(...arrOfSumsOfElvesFood))
       } catch(err) {
         console.log(err)
     }
 }
 
 console.log(readFile())
+// .reduce((a, b) => a+b, 0))
